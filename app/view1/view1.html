@@ -1,1 +1,32 @@
 <p>This is the partial for view 1.</p>
+<ui-gmap-google-map 
+    center='$ctrl.map.center' 
+    zoom='$ctrl.map.zoom'
+    options="$ctrl.map.googleMapOptions">
+    <ui-gmap-polygons
+        models="$ctrl.poligons" 
+        idKey="'id'"
+        path="'path'" 
+        fill="$ctrl.map.poligons.fill"
+        stroke="$ctrl.map.poligons.stroke"
+        static="$ctrl.map.poligons.static"
+        clickable="$ctrl.map.poligons.clickable"
+        draggable="$ctrl.map.poligons.draggable">
+    </ui-gmap-polygons>
+    <ui-gmap-window 
+        coords="$ctrl.infoWindow.coords"  
+        options="$ctrl.infoWindow"
+        closeClick="$ctrl.closeInfoWindow()"
+        templateUrl="'/view1/infowindow.html'"
+        templateParameter="$ctrl.infoWindow.param"
+        ng-cloak>
+    </ui-gmap-window>
+    <ui-gmap-markers 
+        models="$ctrl.markers" 
+        coords="'coords'" 
+        options="'options'"
+        icon="'icon'" 
+        click="$ctrl.showInfoWindow" 
+        isLabel="true">
+    </ui-gmap-markers>
+</ui-gmap-google-map>

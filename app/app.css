@@ -23,3 +23,9 @@
   content: "|";
   padding-right: 0.3em;
 }
+.angular-google-map-container { height: 400px; }
+.markerlabel {
+  border: 1px black solid;
+  background-color: white;
+  padding: 5px;
+}
